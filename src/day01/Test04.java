@@ -11,20 +11,18 @@ import java.util.Scanner;
 
 public class Test04 {
 	
-	public int user() {
-		Scanner scan=new Scanner(System.in);
-		System.out.println("请输入一个邮箱");
-		
-		return 0;
+	public static String user(String User) {
+		int a=User.indexOf("@");
+		String a1=User.substring(0,a);
+		return a1;
 	}
 	
-	
-	
-	
 	public static void main(String[] args) {
-	
-		
-		
+		Test04 A=new Test04();
+		Scanner scan=new Scanner(System.in);
+		System.out.println("请输入一个邮箱!");
+		String User=scan.next();
+		System.out.println("用户名为："+A.user(User));	
 	}
 	
 	

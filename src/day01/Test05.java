@@ -1,6 +1,7 @@
 package day01;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * 随机生成一个5位的英文字母验证码(大小写混搭)
@@ -11,11 +12,27 @@ import java.util.Random;
  */
 public class Test05 {
 	public static void main(String[] args) {
-		Random rand=new Random();
-		while(true) {
-			
+		String a="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM";
+		char[] b=new char[5];
+		for(int i=0;i<5;i++) {
+			Random random=new Random();
+			int num=random.nextInt(a.length());
+			b[i]=a.charAt(num);
+			System.out.print(b[i]+" ");
+		}
+		String str = a.valueOf(b);
+		System.out.println();
+		System.out.print("请输入验证码：");
+		System.out.println(Haha(str));		
+	}
+		public static boolean Haha(String n) {
+			Scanner scan=new Scanner(System.in);
+			String qq=scan.next();
+			boolean q=qq.equalsIgnoreCase(n);
+			return q;
 		}
 		
-	}
+	
+	
 	
 }
