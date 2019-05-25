@@ -1,4 +1,9 @@
 package day03;
+
+import java.util.Scanner;
+
+import org.junit.Test;
+
 /**
  * 要求用户首先输入员工数量，然后输入相应员工信息，格式为：
  * name,age,gender,salary,hiredate
@@ -12,5 +17,21 @@ package day03;
  *
  */
 public class Test07 {
-
+	@Test
+	public void test() {
+		System.out.print("请输入员工的数量：");
+		Scanner scan=new Scanner(System.in);
+		int num=scan.nextInt();
+		for(int i=1;i<=num;i++) {
+			String[] q=new String[num];
+			q[i]=scan.next();
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
 }

@@ -1,9 +1,9 @@
 package day03;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 import org.junit.Test;
@@ -16,18 +16,23 @@ import org.junit.Test;
 public class Test03 {
 
 	@Test
-	public void test01() {
+	public void test01() throws ParseException {
+		System.out.println("输入某人生日，格式为\"yyyy-MM-dd\"");
 		Scanner scan=new Scanner(System.in);
-		String d1=scan.next();
-		String regex="-";
-		System.out.println(Arrays.toString(d1.split(regex)));
-		String[] q=d1.split(regex);
-		int year=Integer.valueOf(q[0]);
-		int mon=Integer.valueOf(q[1]);
-		int day=Integer.valueOf(q[2]);
-		Calendar cal=Calendar.getInstance();
-		long time=cal.getTimeInMillis();
-		System.out.println(time);
+		String d1=scan.next();		
+		//String s1="yyyy-MM-dd";
+		DateFormat df=new SimpleDateFormat("yyyy-MM-dd");
+		//String str=df.format(d1);
+		Date date1 =df.parse(d1);
+		System.out.println(date1);
+		long time1=date1.getTime();
+		System.out.println(time1);
+		Date date2=new Date();
+		System.out.println(date2);
+		long time2=date2.getTime();
+		System.out.println(time2);
+		long time=(time2-time1)/1000/60/60/60/7;
+		System.out.println("经过了"+time+"周");
 	}
 	
 	
