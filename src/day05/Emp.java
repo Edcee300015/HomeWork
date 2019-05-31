@@ -17,7 +17,7 @@ import java.util.Date;
  * 定义equals方法，要求名字以及年龄相同，则认为内容一致。
  * 
  * 实现Comparable接口，并重写抽象方法comparaTo()，比较规则为年龄小的人小。
- * @author Bonnie
+ *
  *
  */
 public class Emp {
