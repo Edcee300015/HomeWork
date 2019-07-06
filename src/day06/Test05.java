@@ -19,25 +19,28 @@ public class Test05 {
 		System.out.print("请输入一个目录或者文件的名字：");
 		String str=scan.next();
 		File file=new File(str);
-		boolean a=file.exists();
-		System.out.println(a);
-		if(file.isFile()) {
-			boolean b=file.delete();
-			System.out.println(b);
-		}else {
-			
-		}
-			
+		System.out.println(remove(file));
+				
 	}
 	
-	public static boolean remove(File n) {
-		if(n.isDirectory()) {
+	public static boolean remove(File file) {
+		if(file.exists()==false) {
+			return false;
+		}else {
+			if(file.isFile()) {
+				return file.delete();
+			}
+			if(file.isDirectory()) {
+				File[] file1=file.listFiles();
+				for(File nn:file1) {
+					remove(nn);
+				}
+				return file.delete();
+			}
 			
 		}
 		return false;
+
 	}
-	
-	
-	
 	
 }
